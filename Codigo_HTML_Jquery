@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<title>Truzz Blogg - Notificación Jquery</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Para usar una fuente de Google fonts, simplemente copiamos su enlace en el head (2 fuentes: Lobster|Nunito)-->
+<link href="https://fonts.googleapis.com/css?family=Lobster|Nunito" rel="stylesheet">
+
+<!-- El códido JQUERY empieza aquí -->
+<script type="text/javascript">
+$(document).ready(function(){
+
+
+	$("#notificacion").delay(1500).slideDown("slow");
+
+	function cerrarNotificacion (){
+		$("#notificacion").click(function(){
+        $(this).slideUp("fast");
+    });
+	}
+	$(".cerrar").click(cerrarNotificacion); 
+    
+    setTimeout(function() {
+       $("#notificacion").fadeOut(2000);
+   	},7000);
+
+    $(".enlace").click(function(event) {
+         alert("Gracias por visitar mi canal!");
+ 	});
+
+ 	
+});
+</script>
+  <!-- El códido JQUERY termina aquí -->
+</head>
+<body>
+<div id="notificacion">
+	<span>Apoya nuestro canal en Youtube! </span>
+	<span class="pedido"><a class="enlace" href="https://www.youtube.com/c/truzzblogg" target="_blank">Suscríbete ya! </a></span>
+	<span class="cerrar"><a href="#">Cerrar</a></span>
+</div>
+
+
+
+	
+	
+</body>
+</html>
